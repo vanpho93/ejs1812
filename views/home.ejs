@@ -7,6 +7,15 @@
     <title>Home</title>
 </head>
 <body>
-    <h3>Khoa Pham Online</h3>
+    <h3>Khoa Pham Online <%= name %></h3>
+    <% if(isAdmin) { %>
+        <p>Bang dieu khien</p>
+    <% } else { %>
+        <p>Ban phai la admin moi co the su dung tinh nang nay</p>
+    <% } %>
+    <% subjects.forEach(x => { %>
+        <p>Mon hoc: <%= x %></p>
+    <% }); %>
 </body>
 </html>
+<script src="reload/reload.js"></script>
