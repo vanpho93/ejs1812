@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('./partials/head.ejs', { title: 'Homepage' }) %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+</head>
 <body>
-    <h3>Khoa Pham Online <%= name %></h3>
-    <% if(isAdmin) { %>
-        <p>Bang dieu khien</p>
-    <% } else { %>
-        <p>Ban phai la admin moi co the su dung tinh nang nay</p>
-    <% } %>
-    <% subjects.forEach(x => { %>
-        <p>Mon hoc: <%= x %></p>
-    <% }); %>
+    <a href="/user">Users</a>
 </body>
 </html>
-<script src="reload/reload.js"></script>
