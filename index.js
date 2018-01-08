@@ -33,4 +33,11 @@ app.post('/add', parser, (req, res) => {
 
 app.get('/user', (req, res) => res.render('list', { users }));
 
+app.get('/remove/:name', (req, res) => {
+    const { name } = req.params;
+    const index = users.findIndex(user => user.name === name);
+    users.splice(index, 1);
+    res.redirect('/user');
+});
+
 app.listen(3000, () => console.log('Server started!'));
