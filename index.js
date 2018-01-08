@@ -15,6 +15,14 @@ const users = [
 ];
 
 app.get('/', (req, res) => res.render('home'));
+
+app.get('/add/:name/:age', (req, res) => {
+    const { name, age } = req.params;
+    const user = new User(name, age);
+    users.push(user);
+    res.send('Them thanh cong');
+});
+
 app.get('/user', (req, res) => res.render('list', { users }));
 
 app.listen(3000, () => console.log('Server started!'));
